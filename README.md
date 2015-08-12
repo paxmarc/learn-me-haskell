@@ -92,7 +92,7 @@ For example, taking all the instances of x*2 where x is between 1 and 10:
 - We can also create conditional predicates that further filter the data that we have. For example, returning all the numbers between 10 and 20 that are _not_ 13, 15 or 19:
 ```haskell
 [ x | x <- [10..20], x /=13, x /= 15, x /= 19]
-```
+````
 
 - We can also use multiple variables:
 ```haskell
@@ -104,3 +104,31 @@ For example, taking all the instances of x*2 where x is between 1 and 10:
 length' xs = sum [1 | _ <- xs]
 
 ```
+
+### Tuples
+
+- Unlike lists, can store several _heterogeneous_ elements - different data types.
+```haskell
+(1,3)
+(3,'a',"hello")
+(50,50.4,"hello",'b')
+```
+- Each combination of types is its own type, so you can only make a list of tuples that contain the same data types in the same order.
+```haskell
+[(1,3),(1,3,"hello")]
+-- this won't work
+
+[(4,3),(5,7)]
+-- this will
+```
+
+#### Pairs
+- Very common data type in Haskell
+- Has multiple functions that can be used:
+    + _fst_ - takes a pair and returns the first component
+    + _snd_ - takes a pair and returns the second component
+- *_Note_*: These functions only work on pairs.
+
+See righttriangle.hs for a good example of tuple usage, along with list comprehensions - tying things together is great.
+
+The solution follows a common pattern in functional programming - start with a large set of solutions, and then filter them down until the right answer is found!
