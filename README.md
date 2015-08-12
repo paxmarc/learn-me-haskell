@@ -115,10 +115,10 @@ length' xs = sum [1 | _ <- xs]
 ```
 - Each combination of types is its own type, so you can only make a list of tuples that contain the same data types in the same order.
 ```haskell
-[(1,3),(1,3,"hello")]
+[ (1,3),(1,3,"hello") ]
 -- this won't work
 
-[(4,3),(5,7)]
+[ (4,3),(5,7) ]
 -- this will
 ```
 
@@ -129,6 +129,6 @@ length' xs = sum [1 | _ <- xs]
     + _snd_ - takes a pair and returns the second component
 - *_Note_*: These functions only work on pairs.
 
-See righttriangle.hs for a good example of tuple usage, along with list comprehensions - tying things together is great.
+See [righttriangle.hs](https://github.com/paxmarc/learn-me-haskell/blob/master/exercises/righttriangle.hs) for a good example of tuple usage, along with list comprehensions - tying things together is great.
 
 The solution follows a common pattern in functional programming - start with a large set of solutions, and then filter them down until the right answer is found!
